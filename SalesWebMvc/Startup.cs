@@ -42,8 +42,10 @@ namespace SalesWebMvc
                     options.UseMySql(Configuration.GetConnectionString("SalesWebMvcContext"), builder =>
                         builder.MigrationsAssembly("SalesWebMvc")));
 
-            services.AddScoped<SeedingService>(); // Registra a injestação de dependência.
+            // Registra a injestação de dependência.
+            services.AddScoped<SeedingService>(); 
             services.AddScoped<SellerService>();
+            services.AddScoped<DepartmentService>();
 
         }
 
